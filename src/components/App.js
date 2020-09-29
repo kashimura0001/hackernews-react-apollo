@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 // import {LinkList} from './LinkList'
-import {CreateLink} from './CreateLink'
+import { CreateLink } from "./CreateLink";
 
 export const App = () => {
-  return <CreateLink />
-}
+  return <CreateLink />;
+};

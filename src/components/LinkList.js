@@ -1,7 +1,7 @@
-import React from 'react'
-import {Link} from './Link'
-import {Query} from 'react-apollo'
-import gql from 'graphql-tag'
+import React from "react";
+import { Link } from "./Link";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 
 const FEED_QUERY = gql`
   {
@@ -14,19 +14,19 @@ const FEED_QUERY = gql`
       }
     }
   }
-`
+`;
 
 export const LinkList = () => {
   return (
-    <Query query={FEED_QUERY} >
-      {({loading, error, data}) => {
-        if (loading) return <div>Fetching</div>
-        if (error) return <div>Error</div>
+    <Query query={FEED_QUERY}>
+      {({ loading, error, data }) => {
+        if (loading) return <div>Fetching</div>;
+        if (error) return <div>Error</div>;
 
-        const linksToRender = data.feed.links
+        const linksToRender = data.feed.links;
 
-        return linksToRender.map((link) => <Link key={link.id} link={link}/>)
+        return linksToRender.map((link) => <Link key={link.id} link={link} />);
       }}
     </Query>
-  )
-}
+  );
+};
