@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { AUTH_TOKEN } from "../constants";
 
-const Header = (props) => {
+export const Header = withRouter((props) => {
   const authToken = localStorage.getItem(AUTH_TOKEN);
 
   return (
@@ -12,6 +12,10 @@ const Header = (props) => {
         <div className="fw7 mr1">Hacker News</div>
         <Link to="/" className="ml1 no-underline black">
           new
+        </Link>
+        <div className="ml1">｜</div>
+        <Link to="/search" className="ml1 no-underline black">
+          search
         </Link>
         {authToken && (
           <div className="flex">
@@ -41,6 +45,4 @@ const Header = (props) => {
       </div>
     </div>
   );
-};
-
-export default withRouter(Header);
+});
